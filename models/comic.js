@@ -6,7 +6,7 @@ const Comic = new Schema(
     grade: { type: String, required: true },
     img: { type: String, required: true },
     price: { type: Number, required: true },
-    seller_id: { type: StSchema.Types.ObjectIdring, ref: 'seller_id' }
+    seller_id: { type: Schema.Types.ObjectId, ref: 'seller_id' }
   },
   { timestamps: true }
 )
