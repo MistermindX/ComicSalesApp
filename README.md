@@ -10,7 +10,7 @@
 
 **_Description_**
 
-This is a comic sales companion app for keeping track of stock and calculating the price for a sale.
+This is a comic sales companion app for keeping track of stock for multiple users and calculating the price for a sale.
 
 ---
 
@@ -24,7 +24,7 @@ This is a comic sales companion app for keeping track of stock and calculating t
 
 **_Getting Started_**
 
-When you open the site you will see the list of comics you have in your database. You can click the items to add them to a cart.
+When you open the site you will enter your username to see the list of comics you have in your database. You can click the items to add them to a cart.
 
 ---
 
