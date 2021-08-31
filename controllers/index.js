@@ -1,18 +1,5 @@
 const { Comic, Seller } = require('../models')
 
-const createComic = async (req, res) => {
-  console.log('create game', req.body)
-  try {
-    const comic = await new Comic(req.body)
-    await comic.save()
-    return res.status(201).json({
-      comic
-    })
-  } catch (error) {
-    return res.status(500).json({ error: error.message })
-  }
-}
-
 const createSeller = async (req, res) => {
   console.log('create seller', req.body)
   try {
@@ -26,19 +13,69 @@ const createSeller = async (req, res) => {
   }
 }
 
-const findAllComicsBySeller = async (req, res) => {
+const findSellerById = async (req, res) => {
   try {
-    const games = await Game.find()
-    return res.status(200).json({ comics })
+    const { id } = req.params
+    const seller = await Seller.findById(id)
+    return res.status(200).json(seller)
   } catch (error) {
     return res.status(500).send(error.message)
   }
 }
 
-const findSeller = async (req, res) => {
+const findAllSellers = async (req, res) => {
   try {
-    const games = await Seller.find()
+    const sellers = await Seller.find()
+    return res.status(200).json({ sellers })
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
+const deleteSeller = async (req, res) => {
+  try {
+    const { id } = req.params
+    const seller = await Seller.findByIdAndDelete(id)
     return res.status(200).json({ seller })
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
+const createComic = async (req, res) => {
+  try {
+    const comic = await new Comic(req.body)
+    await comic.save()
+    return res.status(200).json({ comic })
+  } catch (error) {
+    return res.status(500).json({ error: error.message })
+  }
+}
+
+const findAllComics = async (req, res) => {
+  try {
+    const comics = await Comic.find()
+    return res.status(200).json(comics)
+  } catch (error) {
+    return res.status(500).json({ error: error.message })
+  }
+}
+
+const findAllComicsBySeller = async (req, res) => {
+  try {
+    const sellerId = req.params.id
+    const comics = await Comic.find({ seller_id: sellerId })
+    return res.status(200).json(comics)
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
+const findComicById = async (req, res) => {
+  try {
+    const { id } = req.params
+    const comic = await Comic.findById(id)
+    return res.status(200).json(comic)
   } catch (error) {
     return res.status(500).send(error.message)
   }
@@ -47,7 +84,7 @@ const findSeller = async (req, res) => {
 const deleteComic = async (req, res) => {
   try {
     const { id } = req.params
-    const deleted = await Game.findByIdAndDelete(id)
+    const deleted = await Comic.findByIdAndDelete(id)
     if (deleted) {
       return res.status(200).send('Comic deleted')
     }
@@ -58,9 +95,13 @@ const deleteComic = async (req, res) => {
 }
 
 module.exports = {
-  createComic,
   createSeller,
+  findSellerById,
+  findAllSellers,
+  deleteSeller,
+  createComic,
+  findAllComics,
   findAllComicsBySeller,
-  findSeller,
+  findComicById,
   deleteComic
 }
