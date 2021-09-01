@@ -1,7 +1,6 @@
 import React from 'react'
 import { BASE_URL } from '../globals'
 import axios from 'axios'
-// import { enterSite } from '../App'
 
 function SignUp(props) {
   const addNewSeller = async (e) => {
