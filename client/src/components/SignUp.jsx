@@ -9,7 +9,6 @@ function SignUp(props) {
       const res = await axios.post(`${BASE_URL}/sellers`, {
         name: e.target.sellerName.value
       })
-      console.log(res.data)
       props.enterSite(res.data)
     } catch (err) {
       console.log(err)

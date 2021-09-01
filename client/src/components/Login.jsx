@@ -1,16 +1,15 @@
 import React from 'react'
 import { BASE_URL } from '../globals'
 import axios from 'axios'
-import enterSite from '../App'
 
-function Login() {
+function Login(props) {
   const getSellerInformation = async (e) => {
     e.preventDefault()
     try {
       const res = await axios.get(
         `${BASE_URL}/sellers/${e.target.sellerName.value}`
       )
-      enterSite(res.data)
+      props.enterSite(res.data)
     } catch (err) {
       console.log(err)
     } finally {

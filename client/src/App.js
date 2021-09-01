@@ -20,7 +20,11 @@ function App() {
       </header>
       <main>
         <Switch>
-          <Route exact path="/" component={Landing} enterSite={enterSite} />
+          <Route
+            exact
+            path="/"
+            component={() => <Landing enterSite={enterSite} />}
+          />
           <Route path="/main" component={Main} />
         </Switch>
       </main>
