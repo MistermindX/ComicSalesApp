@@ -1,14 +1,18 @@
 import './styles/App.css'
-import axios from 'axios'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { Switch, Route } from 'react-router-dom'
-import { BASE_URL } from './globals'
 import Navbar from './components/Navbar'
 import Landing from './pages/Landing'
 import Main from './pages/Main'
 
 function App() {
   const [seller, setSeller] = useState({})
+
+  const enterSite = (sellerName) => {
+    setSeller(sellerName)
+    console.log(seller)
+  }
+
   return (
     <div className="App">
       <header>
@@ -16,7 +20,7 @@ function App() {
       </header>
       <main>
         <Switch>
-          <Route exact path="/" component={Landing} />
+          <Route exact path="/" component={Landing} enterSite={enterSite} />
           <Route path="/main" component={Main} />
         </Switch>
       </main>

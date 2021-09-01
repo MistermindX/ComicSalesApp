@@ -2,10 +2,10 @@ import React from 'react'
 import SignUp from '../components/SignUp'
 import Login from '../components/Login'
 
-function Landing() {
+function Landing(props) {
   return (
     <div>
-      <SignUp />
+      <SignUp enterSite={props.enterSite} />
       <Login />
     </div>
   )
