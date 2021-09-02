@@ -8,9 +8,9 @@ import Main from './pages/Main'
 function App() {
   const [seller, setSeller] = useState({})
 
-  const enterSite = async (sellerName) => {
-    setSeller(sellerName)
-  }
+  // const enterSite = (sellerName) => {
+  //   setSeller(sellerName)
+  // }
   return (
     <div className="App">
       {/* <header>
@@ -21,9 +21,9 @@ function App() {
           <Route
             exact
             path="/"
-            component={(props) => <Landing {...props} enterSite={enterSite} />}
+            component={(props) => <Landing {...props} setSeller={setSeller} />}
           />
-          <Route path="/main" component={Main} />
+          <Route path="/main" component={() => <Main {...seller} />} />
         </Switch>
       </main>
     </div>

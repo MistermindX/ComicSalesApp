@@ -3,21 +3,22 @@ import { BASE_URL } from '../globals'
 import axios from 'axios'
 
 function Login(props) {
-  let testSeller
+  let sellerExists
   const getSellerInformation = async (e) => {
     e.preventDefault()
     try {
       const res = await axios.get(
         `${BASE_URL}/sellers/login/${e.target.sellerName.value}`
       )
-      props.enterSite(res.data)
-      console.log(res.data)
-      testSeller = res.data[0]
+      props.setSeller(res.data)
+      sellerExists = res.data
     } catch (err) {
       console.log(err)
     } finally {
       e.target.sellerName.value = ''
-      testSeller ? props.history.push('/main') : console.log('Invalid Login')
+      sellerExists
+        ? props.history.push('/main')
+        : (e.target.sellerName.placeholder = 'Invalid Login')
     }
   }
 

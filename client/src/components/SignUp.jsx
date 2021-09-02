@@ -3,22 +3,16 @@ import { BASE_URL } from '../globals'
 import axios from 'axios'
 
 function SignUp(props) {
-  let testSeller
   const addNewSeller = async (e) => {
     e.preventDefault()
     try {
       const res = await axios.post(`${BASE_URL}/sellers`, {
         name: e.target.sellerName.value
       })
-      props.enterSite(res.data)
-      testSeller = res.data
+      props.setSeller(res.data)
+      props.history.push('/main')
     } catch (err) {
       console.log(err)
-    } finally {
-      e.target.sellerName.value = ''
-      if (testSeller) {
-        props.history.push('/main')
-      }
     }
   }
 

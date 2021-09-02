@@ -1,7 +1,14 @@
 import React from 'react'
+import AddComic from '../components/AddComic'
+import ComicList from '../components/ComicList'
 
-function Main() {
-  return <div></div>
+function Main(seller) {
+  return (
+    <div>
+      <AddComic {...seller} />
+      <ComicList {...seller} />
+    </div>
+  )
 }
 
 export default Main

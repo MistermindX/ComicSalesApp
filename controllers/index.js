@@ -23,7 +23,7 @@ const findSellerById = async (req, res) => {
 const findSellerByName = async (req, res) => {
   try {
     const sellerName = req.params.name
-    const seller = await Seller.find({ name: sellerName })
+    const seller = await Seller.findOne({ name: sellerName })
     return res.status(200).json(seller)
   } catch (error) {
     return res.status(500).send(error.message)
