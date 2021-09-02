@@ -4,9 +4,7 @@ const createSeller = async (req, res) => {
   try {
     const seller = await new Seller(req.body)
     await seller.save()
-    return res.status(201).json({
-      seller
-    })
+    return res.status(201).json(seller)
   } catch (error) {
     return res.status(500).json({ error: error.message })
   }
