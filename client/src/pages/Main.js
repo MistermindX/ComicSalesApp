@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import AddComic from '../components/AddComic'
 import ComicList from '../components/ComicList'
 
 function Main(seller) {
+  const [newestBook, setNewestBook] = useState({})
+
   return (
     <div>
-      <AddComic {...seller} />
-      <ComicList {...seller} />
+      <AddComic {...seller} setNewestBook={setNewestBook} />
+      <ComicList {...seller} {...newestBook} />
     </div>
   )
 }

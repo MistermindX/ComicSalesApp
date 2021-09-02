@@ -2,17 +2,18 @@ import React from 'react'
 import { BASE_URL } from '../globals'
 import axios from 'axios'
 
-function AddComic(seller) {
+function AddComic(seller, props) {
   const addNewComic = async (e) => {
     e.preventDefault()
     try {
-      await axios.post(`${BASE_URL}/comics`, {
+      const res = await axios.post(`${BASE_URL}/comics`, {
         title: e.target.comicTitle.value,
         grade: e.target.comicGrade.value,
         img: e.target.comicImage.value,
         price: e.target.comicPrice.value,
         seller_id: seller._id
       })
+      props.setNewestBook(res.data)
     } catch (err) {
       console.log(err)
     } finally {

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { BASE_URL } from '../globals'
 import axios from 'axios'
 
-function ComicList(seller) {
+function ComicList(seller, newestBook) {
   const [comicListsBySeller, setComicListsBySeller] = useState([])
 
   const getAllUserComics = async (e) => {
@@ -17,7 +17,7 @@ function ComicList(seller) {
 
   useEffect(() => {
     getAllUserComics()
-  }, [])
+  }, [newestBook])
 
   return (
     <ul>
