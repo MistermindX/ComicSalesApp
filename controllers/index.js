@@ -32,7 +32,7 @@ const findSellerByName = async (req, res) => {
 
 const findAllSellers = async (req, res) => {
   try {
-    const sellers = await Seller.find()
+    const sellers = await Seller.findOne()
     return res.status(200).json(sellers)
   } catch (error) {
     return res.status(500).send(error.message)
@@ -43,6 +43,15 @@ const deleteSeller = async (req, res) => {
   try {
     const { id } = req.params
     const seller = await Seller.findByIdAndDelete(id)
+    return res.status(200).json(seller)
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
+const deleteAllSellers = async (req, res) => {
+  try {
+    const seller = await Seller.deleteMany()
     return res.status(200).json(seller)
   } catch (error) {
     return res.status(500).send(error.message)
@@ -107,6 +116,7 @@ module.exports = {
   findSellerByName,
   findAllSellers,
   deleteSeller,
+  deleteAllSellers,
   createComic,
   findAllComics,
   findAllComicsBySeller,

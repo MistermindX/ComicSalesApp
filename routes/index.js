@@ -7,6 +7,7 @@ router.get('/sellers/:id', controllers.findSellerById)
 router.get('/sellers/login/:name', controllers.findSellerByName)
 router.get('/sellers', controllers.findAllSellers)
 router.delete('/sellers/:id', controllers.deleteSeller)
+router.delete('/sellers/all/all', controllers.deleteAllSellers)
 
 router.post('/comics', controllers.createComic)
 router.get('/comics', controllers.findAllComics)

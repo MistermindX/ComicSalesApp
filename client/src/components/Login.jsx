@@ -3,6 +3,7 @@ import { BASE_URL } from '../globals'
 import axios from 'axios'
 
 function Login(props) {
+  let testSeller
   const getSellerInformation = async (e) => {
     e.preventDefault()
     try {
@@ -10,10 +11,13 @@ function Login(props) {
         `${BASE_URL}/sellers/login/${e.target.sellerName.value}`
       )
       props.enterSite(res.data)
+      console.log(res.data)
+      testSeller = res.data[0]
     } catch (err) {
       console.log(err)
     } finally {
       e.target.sellerName.value = ''
+      testSeller ? props.history.push('/main') : console.log('Invalid Login')
     }
   }
 

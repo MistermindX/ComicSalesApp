@@ -6,8 +6,8 @@ function Landing(props) {
   // console.log(props)
   return (
     <div>
-      <SignUp enterSite={props.enterSite} />
-      <Login enterSite={props.enterSite} />
+      <SignUp {...props} enterSite={props.enterSite} />
+      <Login {...props} enterSite={props.enterSite} />
     </div>
   )
 }
