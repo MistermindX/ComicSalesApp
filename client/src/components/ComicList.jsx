@@ -18,7 +18,6 @@ function ComicList({ seller, newestBook }) {
     try {
       e.preventDefault()
       const res = await axios.delete(`${BASE_URL}/comics/${e.target.value}`)
-      console.log(res.data)
     } catch (err) {
       console.log(err)
     } finally {

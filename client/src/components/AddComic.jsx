@@ -3,8 +3,6 @@ import { BASE_URL } from '../globals'
 import axios from 'axios'
 
 function AddComic({ seller, setNewestBook }) {
-  console.log(seller)
-  console.log(typeof setNewestBook)
   const addNewComic = async (e) => {
     e.preventDefault()
     try {
@@ -15,7 +13,6 @@ function AddComic({ seller, setNewestBook }) {
         price: e.target.comicPrice.value,
         seller_id: seller._id
       })
-      console.log(res.data)
       setNewestBook(res.data)
     } catch (err) {
       console.log(err)
