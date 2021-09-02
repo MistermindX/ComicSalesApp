@@ -5,12 +5,6 @@ import axios from 'axios'
 function ComicList(seller) {
   const [comicListsBySeller, setComicListsBySeller] = useState([])
 
-  useEffect(() => {
-    return () => {
-      getAllUserComics()
-    }
-  }, [])
-
   const getAllUserComics = async (e) => {
     try {
       const res = await axios.get(`${BASE_URL}/comics/seller/${seller._id}`)
@@ -18,10 +12,12 @@ function ComicList(seller) {
       setComicListsBySeller(res.data)
     } catch (err) {
       console.log(err)
-    } finally {
-      console.log(comicListsBySeller)
     }
   }
+
+  useEffect(() => {
+    getAllUserComics()
+  }, [])
 
   return (
     <ul>

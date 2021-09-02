@@ -6,7 +6,7 @@ function AddComic(seller) {
   const addNewComic = async (e) => {
     e.preventDefault()
     try {
-      const res = await axios.post(`${BASE_URL}/comics`, {
+      await axios.post(`${BASE_URL}/comics`, {
         title: e.target.comicTitle.value,
         grade: e.target.comicGrade.value,
         img: e.target.comicImage.value,
