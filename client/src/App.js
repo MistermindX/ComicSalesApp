@@ -1,7 +1,7 @@
 import './styles/App.css'
 import React, { useState } from 'react'
 import { Switch, Route } from 'react-router-dom'
-import Navbar from './components/Navbar'
+// import Navbar from './components/Navbar'
 import Landing from './pages/Landing'
 import Main from './pages/Main'
 
@@ -13,9 +13,9 @@ function App() {
   }
   return (
     <div className="App">
-      <header>
+      {/* <header>
         <Navbar />
-      </header>
+      </header> */}
       <main>
         <Switch>
           <Route

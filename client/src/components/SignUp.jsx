@@ -23,7 +23,7 @@ function SignUp(props) {
   }
 
   return (
-    <div className="newSeller">
+    <div className="seller">
       <p>Create New Seller Account</p>
       <form onSubmit={addNewSeller}>
         <input name="sellerName" placeholder="Enter Seller Name" />

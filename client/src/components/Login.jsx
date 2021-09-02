@@ -22,7 +22,7 @@ function Login(props) {
   }
 
   return (
-    <div className="newSeller">
+    <div className="seller">
       <p>Login</p>
       <form onSubmit={getSellerInformation}>
         <input name="sellerName" placeholder="Enter Seller Name" />
