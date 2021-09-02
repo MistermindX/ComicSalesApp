@@ -20,6 +20,16 @@ const findSellerById = async (req, res) => {
   }
 }
 
+const findSellerByName = async (req, res) => {
+  try {
+    const sellerName = req.params.name
+    const seller = await Seller.find({ name: sellerName })
+    return res.status(200).json(seller)
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
 const findAllSellers = async (req, res) => {
   try {
     const sellers = await Seller.find()
@@ -94,6 +104,7 @@ const deleteComic = async (req, res) => {
 module.exports = {
   createSeller,
   findSellerById,
+  findSellerByName,
   findAllSellers,
   deleteSeller,
   createComic,

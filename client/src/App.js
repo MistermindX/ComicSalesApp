@@ -10,7 +10,6 @@ function App() {
 
   const enterSite = (sellerName) => {
     setSeller(sellerName)
-    console.log(seller)
   }
 
   return (

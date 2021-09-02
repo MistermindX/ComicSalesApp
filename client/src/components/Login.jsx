@@ -7,7 +7,7 @@ function Login(props) {
     e.preventDefault()
     try {
       const res = await axios.get(
-        `${BASE_URL}/sellers/${e.target.sellerName.value}`
+        `${BASE_URL}/sellers/login/${e.target.sellerName.value}`
       )
       props.enterSite(res.data)
     } catch (err) {

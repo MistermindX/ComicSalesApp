@@ -4,6 +4,7 @@ const router = Router()
 
 router.post('/sellers', controllers.createSeller)
 router.get('/sellers/:id', controllers.findSellerById)
+router.get('/sellers/login/:name', controllers.findSellerByName)
 router.get('/sellers', controllers.findAllSellers)
 router.delete('/sellers/:id', controllers.deleteSeller)
 
