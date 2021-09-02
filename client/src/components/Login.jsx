@@ -23,7 +23,7 @@ function Login(props) {
 
   return (
     <div className="seller">
-      <p>Login</p>
+      <h2>Login</h2>
       <form onSubmit={getSellerInformation}>
         <input name="sellerName" placeholder="Enter Seller Name" />
         <button type="Submit">Login</button>

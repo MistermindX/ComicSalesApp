@@ -15,8 +15,12 @@
   margin-left: 0.5em;
 } */
 
+body {
+  background-color: blanchedalmond;
+  /* background-image: url(comic_book_background.jpg); */
+}
+
 .seller {
   text-align: center;
   padding-top: 1%;
-  /* background-image: url(../); */
 }
