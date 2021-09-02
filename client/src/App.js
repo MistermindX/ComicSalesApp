@@ -8,9 +8,6 @@ import Main from './pages/Main'
 function App() {
   const [seller, setSeller] = useState({})
 
-  // const enterSite = (sellerName) => {
-  //   setSeller(sellerName)
-  // }
   return (
     <div className="App">
       {/* <header>

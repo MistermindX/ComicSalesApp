@@ -8,7 +8,16 @@ function ComicList(seller, newestBook) {
   const getAllUserComics = async (e) => {
     try {
       const res = await axios.get(`${BASE_URL}/comics/seller/${seller._id}`)
-      console.log(res.data)
+      setComicListsBySeller(res.data)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  const deleteComic = async (e) => {
+    try {
+      const res = await axios.delete(`${BASE_URL}/comics/${e.target.value}`)
+      console.log(res.data.value)
       setComicListsBySeller(res.data)
     } catch (err) {
       console.log(err)
@@ -23,6 +32,9 @@ function ComicList(seller, newestBook) {
     <ul>
       {comicListsBySeller.map((comic) => (
         <li key={comic._id}>
+          <button value={comic._id} onClick={deleteComic}>
+            x
+          </button>
           <h3>{comic.title}</h3>
           <h5>{comic.grade}</h5>
           <h5>${comic.price}</h5>

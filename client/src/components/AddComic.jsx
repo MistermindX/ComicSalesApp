@@ -13,6 +13,7 @@ function AddComic(seller, props) {
         price: e.target.comicPrice.value,
         seller_id: seller._id
       })
+      console.log(res.data)
       props.setNewestBook(res.data)
     } catch (err) {
       console.log(err)
