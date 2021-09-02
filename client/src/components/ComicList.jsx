@@ -16,6 +16,7 @@ function ComicList(seller, newestBook) {
 
   const deleteComic = async (e) => {
     try {
+      e.preventDefault()
       const res = await axios.delete(`${BASE_URL}/comics/${e.target.value}`)
       console.log(res.data.value)
       setComicListsBySeller(res.data)
@@ -31,8 +32,12 @@ function ComicList(seller, newestBook) {
   return (
     <ul>
       {comicListsBySeller.map((comic) => (
-        <li key={comic._id}>
-          <button value={comic._id} onClick={deleteComic}>
+        <li className="comic" key={comic._id}>
+          <button
+            className="deleteButton"
+            value={comic._id}
+            onClick={deleteComic}
+          >
             x
           </button>
           <h3>{comic.title}</h3>

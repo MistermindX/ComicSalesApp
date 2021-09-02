@@ -24,3 +24,13 @@ body {
   text-align: center;
   padding-top: 1%;
 }
+
+.comic {
+  display: flex;
+  padding: 10px;
+}
+
+.deleteButton {
+  width: 25px;
+  height: 25px;
+}
