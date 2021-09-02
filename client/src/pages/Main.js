@@ -7,8 +7,8 @@ function Main(seller) {
 
   return (
     <div>
-      <AddComic {...seller} setNewestBook={setNewestBook} />
-      <ComicList {...seller} {...newestBook} />
+      <AddComic seller={seller} setNewestBook={setNewestBook} />
+      <ComicList seller={seller} newestBook={newestBook} />
     </div>
   )
 }

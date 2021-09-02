@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { BASE_URL } from '../globals'
 import axios from 'axios'
 
-function ComicList(seller, newestBook) {
+function ComicList({ seller, newestBook }) {
   const [comicListsBySeller, setComicListsBySeller] = useState([])
 
   const getAllUserComics = async (e) => {
@@ -18,10 +18,11 @@ function ComicList(seller, newestBook) {
     try {
       e.preventDefault()
       const res = await axios.delete(`${BASE_URL}/comics/${e.target.value}`)
-      console.log(res.data.value)
-      setComicListsBySeller(res.data)
+      console.log(res.data)
     } catch (err) {
       console.log(err)
+    } finally {
+      getAllUserComics()
     }
   }
 
