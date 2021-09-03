@@ -20,7 +20,12 @@ function App() {
             path="/"
             component={(props) => <Landing {...props} setSeller={setSeller} />}
           />
-          <Route path="/main" component={() => <Main {...seller} />} />
+          <Route
+            path="/main"
+            component={(props) => (
+              <Main {...props} {...seller} setSeller={setSeller} />
+            )}
+          />
         </Switch>
       </main>
     </div>

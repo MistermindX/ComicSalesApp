@@ -2,7 +2,7 @@ import React from 'react'
 import { BASE_URL } from '../globals'
 import axios from 'axios'
 
-function AddComic({ seller, setNewestBook }) {
+function AddComic(props, { seller, setNewestBook, setSeller }) {
   const addNewComic = async (e) => {
     e.preventDefault()
     try {
@@ -24,6 +24,11 @@ function AddComic({ seller, setNewestBook }) {
     }
   }
 
+  // const logOut = () => {
+  //   setSeller({})
+  //   props.history.push('/')
+  // }
+
   return (
     <div className="addComic">
       <h2>Add New Comic</h2>
@@ -34,6 +39,7 @@ function AddComic({ seller, setNewestBook }) {
         <input name="comicPrice" placeholder="Price" />
         <button type="Submit">Submit</button>
       </form>
+      {/* <button onClick={logOut}>Logout</button> */}
     </div>
   )
 }

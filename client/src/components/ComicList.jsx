@@ -17,7 +17,7 @@ function ComicList({ seller, newestBook }) {
   const deleteComic = async (e) => {
     try {
       e.preventDefault()
-      const res = await axios.delete(`${BASE_URL}/comics/${e.target.value}`)
+      await axios.delete(`${BASE_URL}/comics/${e.target.value}`)
     } catch (err) {
       console.log(err)
     } finally {
