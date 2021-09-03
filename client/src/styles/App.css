@@ -34,3 +34,7 @@ body {
 .addComic {
   text-align: center;
 }
+
+.addComic input {
+  margin: 0 15px 0 15px;
+}
