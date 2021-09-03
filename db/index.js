@@ -7,7 +7,7 @@ let dbUrl =
     : 'mongodb://127.0.0.1:27017/comicsDatabase'
 
 mongoose
-  .connect(MONGODB_URI, {
+  .connect(dbUrl, {
     useUnifiedTopology: true,
     useNewUrlParser: true,
     useFindAndModify: true
