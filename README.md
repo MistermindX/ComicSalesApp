@@ -19,23 +19,30 @@ This is a comic sales companion app for keeping track of stock for multiple user
 - React
 - Express
 - MongoDB
+- Node
 
 ---
 
 **_Getting Started_**
 
-When you open the site you will enter your username to see the list of comics you have in your database. You can click the items to add them to a cart.
+When you open the site you will enter your username to see the list of comics you have in your database.
 
 ---
 
 **_Screenshots_**
 
+![loginpage](Screenshots/loginPage.png)
+
+![onecomic](Screenshots/oneComic.png)
+
+![twocomics](Screenshots/twoComics.png)
+
 **_Future Updates_**
 
-- [ ] Future Update 1
-- [ ] Future Update 2
-- [x] Completed Update
-- [x] ~~Strikethrough~~ Items Also
+- [ ] Cart Function
+- [ ] Logout Function
+- [ ] Cookies Functionality to remember logins
+- [ ] Bootstrap for better styling
 
 ---
 
