@@ -30,22 +30,24 @@ function ComicList({ seller, newestBook }) {
   }, [newestBook])
 
   return (
-    <ul>
-      {comicListsBySeller.map((comic) => (
-        <li className="comic" key={comic._id}>
-          <button
-            className="deleteButton"
-            value={comic._id}
-            onClick={deleteComic}
-          >
-            x
-          </button>
-          <h3>{comic.title}</h3>
-          <h5>{comic.grade}</h5>
-          <h5>${comic.price}</h5>
-        </li>
-      ))}
-    </ul>
+    <div className="comicList">
+      <ul className="comicList">
+        {comicListsBySeller.map((comic) => (
+          <li className="comic" key={comic._id}>
+            <button
+              className="deleteButton"
+              value={comic._id}
+              onClick={deleteComic}
+            >
+              x
+            </button>
+            <h3>{comic.title}</h3>
+            <h5>{comic.grade}</h5>
+            <h5>${comic.price}</h5>
+          </li>
+        ))}
+      </ul>
+    </div>
   )
 }
 
