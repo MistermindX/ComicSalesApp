@@ -24,11 +24,6 @@ function AddComic({ seller, setNewestBook }) {
     }
   }
 
-  // const logOut = () => {
-  //   setSeller({})
-  //   props.history.push('/')
-  // }
-
   return (
     <div className="addComic">
       <h2>Add New Comic</h2>
@@ -39,7 +34,8 @@ function AddComic({ seller, setNewestBook }) {
         <input name="comicPrice" placeholder="Price" />
         <button type="Submit">Submit</button>
       </form>
-      {/* <button onClick={logOut}>Logout</button> */}
+      <h1 className="welcome">Welcome {seller.name}!</h1>
+      <h3 className="welcome">Comic List:</h3>
     </div>
   )
 }

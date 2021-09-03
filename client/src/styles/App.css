@@ -31,6 +31,9 @@ body {
   flex-wrap: wrap;
 }
 
+.welcome {
+  text-align: center;
+}
 .addComic {
   text-align: center;
 }
