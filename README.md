@@ -10,7 +10,7 @@
 
 **_Description_**
 
-This is a comic sales companion app for keeping track of stock for multiple users and calculating the price for a sale.
+This is a comic sales companion app for keeping track of stock for multiple users and calculating the price for a sale. It is deployed on Heroku here: [Heroku](https://cryptic-beach-16216.herokuapp.com/)
 
 ---
 
