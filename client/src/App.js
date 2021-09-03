@@ -10,9 +10,6 @@ function App() {
 
   return (
     <div className="App">
-      {/* <header>
-        <Navbar />
-      </header> */}
       <main>
         <Switch>
           <Route
