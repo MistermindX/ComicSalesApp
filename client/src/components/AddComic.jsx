@@ -2,7 +2,7 @@ import React from 'react'
 import { BASE_URL } from '../globals'
 import axios from 'axios'
 
-function AddComic(props, { seller, setNewestBook, setSeller }) {
+function AddComic({ seller, setNewestBook }) {
   const addNewComic = async (e) => {
     e.preventDefault()
     try {
